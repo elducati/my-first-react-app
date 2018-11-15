@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Clock from './Clock.js';
+import MyComponent from './MyComponent.js';
 
 
 class App extends Component {
@@ -22,6 +23,9 @@ class App extends Component {
             Hi {this.props.name}!
           </a>
           <Clock />
+          <p>
+            <MyComponent />
+            </p>
         </header>
       </div>
     );
