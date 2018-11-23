@@ -1,4 +1,7 @@
 import React from 'react';
+import Filters from './Filters.js';
+import ProductForm from './ProductForm.js';
+import ProductTable from './ProductTable';
 
 var PRODUCTS = {
     '1': {id: 1, category: 'Musical Instruments', price: '$459.99', stocked: true, name: 'Clarinet'},
@@ -14,7 +17,7 @@ class Products extends React.Component {
         return (
             <div>
                 <Filters />
-                <ProductTable />
+                <ProductTable Products={PRODUCTS} />
                 <ProductForm />
             </div>
         );

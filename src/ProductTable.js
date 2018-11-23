@@ -1,11 +1,14 @@
 import React from 'react';
 import ProductRow from'./ProductRow.js';
-import SortableColumnHeader from './SortableColumnHeader.js';
+
+import ProductTableHeader from './ProductTableHeader.js';
 
 class ProductTable extends React.Component {
     render() {
-        let rows = this.props.products.map((product) => {
-            return (
+        let productsAsArray = Object.keys(this.props.products).map((pid) => this.props.products[pid]);
+        let rows = [];
+        productsAsArray.forEach((product) => {
+            rows.push (
                 <ProductRow product = {product} key={product.id} />
             );
         });
@@ -13,11 +16,12 @@ class ProductTable extends React.Component {
             <table>
                 <thead>
                     <tr>
-                        <SortableColumnHeader column='name' />
-                        <SortableColumnHeader column='price' />
+                        <ProductTableHeader column='name' />
+                        <ProductTableHeader column='price' />
                     </tr>
                 </thead>
                 <tbody>
+                    {rows}
                 </tbody>
             </table>
         );
